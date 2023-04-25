@@ -1,0 +1,8 @@
+body {
+  max-width: 750px;
+  margin: 0 auto;
+  text-align: center; }
+
+header h1 {
+  font-size: 32px;
+  color: #000; }
