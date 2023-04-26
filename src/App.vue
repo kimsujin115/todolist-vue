@@ -1,5 +1,5 @@
 <template>
-  <div id="app-wrap">
+  <div id="appWrap">
     <TodoHeader></TodoHeader>
     <TodoInput></TodoInput>
     <TodoList></TodoList>

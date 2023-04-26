@@ -18,21 +18,127 @@ html, body {
     height:100%;
 }
 
-#app-wrap {
+#appWrap {
+    padding:30px 15px;
     height:100%;
     border:1px solid #000;
     border-radius: 15px;
     text-align: center;
+    background-color: #f1f1f1;
 }
 
 header {
-    padding:20px 0;
+    padding-bottom: 20px;
     h1 {
         font-size: 32px;
         color:#000;
     }
 }
 
+.inputBox {
+    display: flex;
+    width:100%;
+    input {
+        flex:1;
+        padding:0 10px;
+        height:40px;
+        border-radius: 2px;
+        border:none;
+        background-color: #fff;
+    }
+    .btnAdd {
+        position:relative;
+        margin-left:3px;
+        width:40px;
+        height:40px;
+        font-size: 0;
+        border:none;
+        cursor: pointer;
+        background:#000;
+        &:before, &:after {
+            content:'';
+            position:absolute;
+            top:50%;
+            left:50%;
+            width:20px;
+            height:2px;
+            transform: translate(-50%, -50%);
+            background-color:#fff;
+        }
+        &:after {
+            transform: translate(-50%, -50%) rotate(-90deg);
+        }
+    }
+}
+
+.listWrap {
+    margin:20px 0 50px;
+    .btnArea {
+        overflow: hidden;
+        .btnAllDel {
+            float:right;
+            padding:5px 10px;
+            font-size:14px;
+            color:#000;
+            border:1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            background: #fff;
+        }
+    }
+    .todoList {
+        margin-top:10px;
+        height:400px;
+        overflow-y: auto;
+        li {
+            display: flex;
+            padding:10px 15px;
+            margin-top: 10px;
+            list-style: none;
+            text-align: left;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 5px;
+            background-color:#fff;
+            &:first-child {
+                margin-top:0;
+            }
+            span {
+                position: relative;
+                padding-left:20px;
+                font-size: 18px;
+                color:#000;
+                &:after {
+                    content:'';
+                    position:absolute;
+                    left: 0;
+                    top:50%;
+                    margin-top:-6px;
+                    width:10px;
+                    height:6px;
+                    border-left:2px solid #000;
+                    border-bottom:2px solid #000;
+                    background-color: #fff;
+                    transform: rotate(-45deg);
+                }
+            }
+            .btnDel {
+                border:none;
+                font-size:16px;
+                cursor: pointer;
+                color: #d31d1d;
+            }
+        }
+    }
+}
+
+footer {
+    p {
+        text-align: center;
+        font-size: 14px;
+        color:#000;
+    }
+}
 
 
 
