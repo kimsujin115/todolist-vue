@@ -4,17 +4,9 @@
       <button class="btnAllDel">전체삭제</button>
     </div>
     <ul class="todoList">
-      <li>
-        <span>Vue</span>
-        <button class="btnDel fas fa-trash"></button>
-      </li>
-      <li>
-        <span>React</span>
-        <button class="btnDel fas fa-trash"></button>
-      </li>
-      <li>
-        <span>mysql</span>
-        <button class="btnDel fas fa-trash"></button>
+      <li v-for="item in todoItems" :key="item">
+        <span>{{ item }}</span>
+        <button class="btnDel fas fa-trash""></button>
       </li>
     </ul>
   </div>
@@ -22,7 +14,18 @@
 
 <script>
     export default {
-
+      data() {
+        return {
+          todoItems : []
+        }
+      }, 
+      created() {
+        if ( localStorage.length > 0 ) {
+          for (let i=0; i < localStorage.length; i++) {
+            this.todoItems.push(localStorage.key(i))
+          }
+        }
+      },
     }
 </script>
 
