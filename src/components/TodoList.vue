@@ -4,9 +4,9 @@
       <button class="btnAllDel">전체삭제</button>
     </div>
     <ul class="todoList">
-      <li v-for="item in todoItems" :key="item">
+      <li v-for="(item, index) in todoItems" :key="item">
         <span>{{ item }}</span>
-        <button class="btnDel fas fa-trash""></button>
+        <button class="btnDel fas fa-trash" @click="onDelteTodo(item, index)"></button>
       </li>
     </ul>
   </div>
@@ -26,6 +26,14 @@
           }
         }
       },
+      methods : {
+        onDelteTodo(item, index) {
+          if (confirm('할 일을 삭제하시겠습니까?')) {
+            localStorage.removeItem(item);
+            this.todoItems.splice(index, 1)
+          }
+        }
+      }
     }
 </script>
 
