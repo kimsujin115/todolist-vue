@@ -1,7 +1,7 @@
 <template>
   <div class="listWrap">
     <div class="btnArea">
-      <button class="btnAllDel">전체삭제</button>
+      <button class="btnAllDel" @click="onDeleteAll">전체삭제</button>
     </div>
     <ul class="todoList">
       <li v-for="(item, index) in todoItems" :key="item">
@@ -32,6 +32,10 @@
             localStorage.removeItem(item);
             this.todoItems.splice(index, 1)
           }
+        },
+        onDeleteAll() {
+          localStorage.clear()
+          this.todoItems = []
         }
       }
     }
