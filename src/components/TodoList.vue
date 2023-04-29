@@ -4,10 +4,10 @@
       <button class="btnAllDel" @click="onDeleteAll">전체삭제</button>
     </div>
     <div class="todoListArea">
-      <ul class="todoList" v-if="todoItems.length > 0">
-        <li v-for="(item, index) in todoItems" :key="item">
+      <ul class="todoList" v-if="propsdata.length > 0">
+        <li v-for="(item, index) in propsdata" :key="item">
           <span>{{ item }}</span>
-          <button class="btnDel fas fa-trash" @click="onDelteTodo(item, index)"></button>
+          <button class="btnDel fas fa-trash" @click="onDeleteTodo(item, index)"></button>
         </li>
       </ul>
       <p class="noDataText" v-else>등록된 할 일이 없습니다.</p>
@@ -17,28 +17,15 @@
 
 <script>
     export default {
-      data() {
-        return {
-          todoItems : []
-        }
-      }, 
-      created() {
-        if ( localStorage.length > 0 ) {
-          for (let i=0; i < localStorage.length; i++) {
-            this.todoItems.push(localStorage.key(i))
-          }
-        }
-      },
+      props: ['propsdata'],
       methods : {
-        onDelteTodo(item, index) {
+        onDeleteTodo(item, index) {
           if (confirm('할 일을 삭제하시겠습니까?')) {
-            localStorage.removeItem(item);
-            this.todoItems.splice(index, 1)
+            this.$emit('onDeleteTodo', item, index);
           }
         },
         onDeleteAll() {
-          localStorage.clear()
-          this.todoItems = []
+          this.$emit('onDeleteAll')
         }
       }
     }

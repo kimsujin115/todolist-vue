@@ -17,7 +17,7 @@
         onAddTodo() {
           if ( this.newTodoItem !== '') {
             const item = this.newTodoItem;
-            localStorage.setItem(item, item); //로컬 스토리지에 데이터 저장
+            this.$emit('onAddTodo', item);
             this.newTodoItem = '';
           } else {
             alert('할 일을 입력해 주세요.')
