@@ -72,11 +72,14 @@ header {
       border-radius: 5px;
       cursor: pointer;
       background: #fff; }
-  .listWrap .todoList {
+  .listWrap .todoListArea {
     margin-top: 10px;
     height: 400px;
     overflow-y: auto; }
-    .listWrap .todoList li {
+    .listWrap .todoListArea .noDataText {
+      margin-top: 150px;
+      font-size: 16px; }
+    .listWrap .todoListArea .todoList li {
       display: flex;
       padding: 10px 15px;
       margin-top: 10px;
@@ -86,14 +89,14 @@ header {
       align-items: center;
       border-radius: 5px;
       background-color: #fff; }
-      .listWrap .todoList li:first-child {
+      .listWrap .todoListArea .todoList li:first-child {
         margin-top: 0; }
-      .listWrap .todoList li span {
+      .listWrap .todoListArea .todoList li span {
         position: relative;
         padding-left: 20px;
         font-size: 18px;
         color: #000; }
-        .listWrap .todoList li span:after {
+        .listWrap .todoListArea .todoList li span:after {
           content: '';
           position: absolute;
           left: 0;
@@ -105,7 +108,7 @@ header {
           border-bottom: 2px solid #000;
           background-color: #fff;
           transform: rotate(-45deg); }
-      .listWrap .todoList li .btnDel {
+      .listWrap .todoListArea .todoList li .btnDel {
         border: none;
         font-size: 16px;
         cursor: pointer;

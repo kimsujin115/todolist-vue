@@ -86,47 +86,53 @@ header {
             background: #fff;
         }
     }
-    .todoList {
+    .todoListArea {
         margin-top:10px;
         height:400px;
         overflow-y: auto;
-        li {
-            display: flex;
-            padding:10px 15px;
-            margin-top: 10px;
-            list-style: none;
-            text-align: left;
-            justify-content: space-between;
-            align-items: center;
-            border-radius: 5px;
-            background-color:#fff;
-            &:first-child {
-                margin-top:0;
-            }
-            span {
-                position: relative;
-                padding-left:20px;
-                font-size: 18px;
-                color:#000;
-                &:after {
-                    content:'';
-                    position:absolute;
-                    left: 0;
-                    top:50%;
-                    margin-top:-6px;
-                    width:10px;
-                    height:6px;
-                    border-left:2px solid #000;
-                    border-bottom:2px solid #000;
-                    background-color: #fff;
-                    transform: rotate(-45deg);
+        .noDataText {
+            margin-top: 150px;
+            font-size:16px;
+        }
+        .todoList {
+            li {
+                display: flex;
+                padding:10px 15px;
+                margin-top: 10px;
+                list-style: none;
+                text-align: left;
+                justify-content: space-between;
+                align-items: center;
+                border-radius: 5px;
+                background-color:#fff;
+                &:first-child {
+                    margin-top:0;
                 }
-            }
-            .btnDel {
-                border:none;
-                font-size:16px;
-                cursor: pointer;
-                color: #d31d1d;
+                span {
+                    position: relative;
+                    padding-left:20px;
+                    font-size: 18px;
+                    color:#000;
+                    &:after {
+                        content:'';
+                        position:absolute;
+                        left: 0;
+                        top:50%;
+                        margin-top:-6px;
+                        width:10px;
+                        height:6px;
+                        border-left:2px solid #000;
+                        border-bottom:2px solid #000;
+                        background-color: #fff;
+                        transform: rotate(-45deg);
+                    }
+                }
+                .btnDel {
+                    border:none;
+                    font-size:16px;
+                    cursor: pointer;
+                    color: #d31d1d;
+                }
             }
         }
     }

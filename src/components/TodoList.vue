@@ -3,12 +3,15 @@
     <div class="btnArea">
       <button class="btnAllDel" @click="onDeleteAll">전체삭제</button>
     </div>
-    <ul class="todoList">
-      <li v-for="(item, index) in todoItems" :key="item">
-        <span>{{ item }}</span>
-        <button class="btnDel fas fa-trash" @click="onDelteTodo(item, index)"></button>
-      </li>
-    </ul>
+    <div class="todoListArea">
+      <ul class="todoList" v-if="todoItems.length > 0">
+        <li v-for="(item, index) in todoItems" :key="item">
+          <span>{{ item }}</span>
+          <button class="btnDel fas fa-trash" @click="onDelteTodo(item, index)"></button>
+        </li>
+      </ul>
+      <p class="noDataText" v-else>등록된 할 일이 없습니다.</p>
+    </div>
   </div>
 </template>
 
