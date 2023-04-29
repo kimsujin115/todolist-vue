@@ -45,8 +45,11 @@ header {
     height: 40px;
     font-size: 0;
     border: none;
-    cursor: pointer;
-    background: #000; }
+    background: #000;
+    opacity: 0.3; }
+    .inputBox .btnAdd.on {
+      opacity: 1;
+      cursor: pointer; }
     .inputBox .btnAdd:before, .inputBox .btnAdd:after {
       content: '';
       position: absolute;
@@ -70,8 +73,11 @@ header {
       color: #000;
       border: 1px solid #ddd;
       border-radius: 5px;
-      cursor: pointer;
-      background: #fff; }
+      background: #fff;
+      opacity: 0.5; }
+      .listWrap .btnArea .btnAllDel.on {
+        cursor: pointer;
+        opacity: 1; }
   .listWrap .todoListArea {
     margin-top: 10px;
     height: 400px;

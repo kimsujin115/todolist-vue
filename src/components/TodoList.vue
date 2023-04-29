@@ -1,7 +1,7 @@
 <template>
   <div class="listWrap">
     <div class="btnArea">
-      <button class="btnAllDel" @click="onDeleteAll">전체삭제</button>
+      <button :class="`btnAllDel ${propsdata.length > 0 ? 'on' : ''}`" @click="onDeleteAll">전체삭제</button>
     </div>
     <div class="todoListArea">
       <ul class="todoList" v-if="propsdata.length > 0">

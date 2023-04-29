@@ -1,7 +1,7 @@
 <template>
   <div class="inputBox">
     <input type="text" v-model="newTodoItem" @keyup.enter="onAddTodo" placeholder="할 일을 입력해 주세요.">
-    <button @click="onAddTodo" class="btnAdd">등록하기</button>
+    <button @click="onAddTodo" :class="`btnAdd ${newTodoItem.length > 0 ? 'on' : ''}`">등록하기</button>
   </div>
 </template>
 

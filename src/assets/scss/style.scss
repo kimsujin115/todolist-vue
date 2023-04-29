@@ -53,8 +53,12 @@ header {
         height:40px;
         font-size: 0;
         border:none;
-        cursor: pointer;
         background:#000;
+        opacity: 0.3;
+        &.on {
+            opacity: 1;
+            cursor: pointer;
+        }
         &:before, &:after {
             content:'';
             position:absolute;
@@ -82,8 +86,12 @@ header {
             color:#000;
             border:1px solid #ddd;
             border-radius: 5px;
-            cursor: pointer;
             background: #fff;
+            opacity: 0.5;
+            &.on {
+                cursor: pointer;
+                opacity: 1;
+            }
         }
     }
     .todoListArea {
